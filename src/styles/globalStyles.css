@@ -1,0 +1,65 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  html,
+  body,
+  #root {
+    height: 100%;
+    overflow: auto;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    width: 100%;
+  }
+
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  button {
+    border: none;
+    background-color: none;
+  }
+
+  a,
+  a:active,
+  a:hover,
+  a:visited {
+    color: inherit;
+    text-decoration: none;
+  }
+}
+
+@layer utilities {
+  .anticon .anticon-star > svg {
+    margin-bottom: 6px;
+    height: 1.5rem;
+    width: 1.5rem;
+  }
+
+  .anticon .ant-rate-star-full .anticon-star svg {
+    color: #1890ff;
+  }
+
+  .anticon .ant-rate-star-half {
+    color: #1890ff;
+  }
+
+  .antslider .ant-slider-handle {
+    border-color: #1890ff;
+  }
+
+  .antslider .ant-slider-track {
+    background-color: #1890ff;
+  }
+}

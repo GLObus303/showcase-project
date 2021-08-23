@@ -1,0 +1,28 @@
+{
+  "compilerOptions": {
+    "allowJs": true, // Allow javascript in the codebase
+    "allowUnreachableCode": false, // Forbid unreachable code in the codebase
+    "noFallthroughCasesInSwitch": true, // Additional guards when using enums in switch
+    "allowSyntheticDefaultImports": true, // Enable import Something from 'module' instead of import * as Something from 'module' when no default export exists
+    "esModuleInterop": true, // Same as previous does some magic with CommonJS
+    "forceConsistentCasingInFileNames": true, // Guards typos in imports with letter casing
+    "jsx": "react-jsx", // Because of new jsx-runtime syntax, we would go for "react-jsx", if nextjs they require "preserve" due to some optimization
+    "target": "es5", // Specifies generated code, probably handled by babel anyway
+    "module": "esnext", // Used module type in codebase, (umd/amd/commonjs/esm) - for us esnext because of jsx-runtime syntax
+    "lib": ["dom", "dom.iterable", "esnext"], // Libraries for compilations
+    "moduleResolution": "node", // From docs: The way typescript is resolving modules, node is a default for most (depends on "module")
+    "noImplicitAny": true, // Forces typing everything, an absolute must
+    "noImplicitReturns": true, // Guards against functions not returning from only some code paths - very subtle, usually warns against bad code
+    "noImplicitThis": true, // Forces usage of "this" instead of silently referring to "this" context
+    "sourceMap": true, // Generating of source maps for better debugging
+    "strictNullChecks": true, // Forces very expected handling with "undefined" and "null" values, they must be explicitly stated in types
+    "strict": true, // Strict mode for code
+    "pretty": true, // Experimental feature for some styling of errors
+    "noEmit": true, // No emitting of compiled code to /output folder might be only for legacy reasons
+    "skipLibCheck": true, // Skip checking of external libraries - check only the code against them, it prevents many weird errors with incompatibility
+    "resolveJsonModule": true, // Enable JSON import to ESM, be aware, that importing JSON might lead to longer loading time
+    "isolatedModules": true, // Forces all ts/tsx files to have an export
+    "suppressImplicitAnyIndexErrors": true // Ignores type errors on wrongly type Object.values/keys/entries functions
+  },
+  "include": ["src"]
+}
